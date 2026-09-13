@@ -1,46 +1,68 @@
-# 📦 CRUD Inventory Prototype (FastAPI)
-This project is a **prototype inventory management system** built with **FastAPI**, focusing on building and understanding **CRUD (Create, Read, Update, Delete)** operations for managing inventory items and users with authentication.
+# CRUD Inventory Prototype (FastAPI)
 
-## 🚀 Features
-- ➕ Add new inventory items with validation using **Pydantic**
-- 📋 View all items with filtering and sorting options
-- ✏️ Update existing items with validation and error handling
-- ❌ Delete items with confirmation and error handling
-- ⚡ Powered by **FastAPI** for quick development and testing
-- 🔒 User authentication using **OAuth2** and **JWT** tokens
-- 🔑 Password hashing using **Passlib** and **Bcrypt**
+*A prototype inventory management system built with FastAPI, focused on CRUD (Create, Read, Update, Delete) operations for managing inventory items and users with authentication.*
 
-## 🛠️ Tech Stack
-- **FastAPI** → Web framework for building the API
-- **Pydantic** → Data validation and serialization
-- **SQLAlchemy** → Database ORM for interacting with the database
-- **SQLite** → Database storage for the prototype
-- **Uvicorn** → ASGI server for running the application
-- **Passlib** and **Bcrypt** → Password hashing and verification
-- **PyJWT** → JSON Web Token handling for authentication
+## Features
 
-## 📦 Installation
-To install the required dependencies, run the following command:
-```bash
-pip install -r Pipfile
-```
-This will install all the dependencies specified in the `Pipfile`.
+- Add new inventory items with validation using **Pydantic**
+- View all items with filtering and sorting options
+- Update existing items with validation and error handling
+- Delete items with confirmation and error handling
+- Powered by **FastAPI** for quick development and testing
+- User authentication using **OAuth2** and **JWT** tokens
+- Password hashing using **Passlib** and **Bcrypt**
 
-## 🚀 Usage
-To run the application, navigate to the project directory and run the following command:
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Web framework | FastAPI |
+| Validation | Pydantic |
+| ORM | SQLAlchemy |
+| Database | SQLite |
+| ASGI server | Uvicorn |
+| Auth | OAuth2, JWT (`python-jose`, `pyjwt`) |
+| Password hashing | Passlib + Bcrypt |
+| Testing | pytest, httpx |
+| Tooling | Black, isort, mypy, vulture |
+
+Dependency management is via `Pipfile` (Python 3.8).
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.8
+- [pipenv](https://pipenv.pypa.io/) (dependencies are declared in `Pipfile`)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/gokulKumbakkara/Inventory-Application-Prototype.git
+   ```
+2. Install the required dependencies:
+   ```bash
+   pipenv install
+   ```
+
+## Usage
+
+To run the application, navigate to the project directory and run:
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000
 ```
-This will start the Uvicorn server and make the API available at `http://localhost:8000`.
+This starts the Uvicorn server and makes the API available at `http://localhost:8000`.
 
-## 📂 Folder Structure
-The project is organized into the following folders:
-- `models`: Database models and schema definitions
-- `repository`: Database repository layer for interacting with the database
-- `routers`: API routers for handling requests and responses
-- `schema`: API schema definitions using **Pydantic**
-- `security`: Security-related functionality, including authentication and authorization
-- `tests`: Unit tests and integration tests for the application
+## Project Structure
 
-## 🤝 Contributing
+- `models/` — database models and schema definitions
+- `repository/` — database repository layer for interacting with the database
+- `routers/` — API routers for handling requests and responses
+- `schema/` — API schema definitions using Pydantic
+- `security/` — security-related functionality, including authentication and authorization
+- `tests/` — unit tests and integration tests for the application
+
+## Contributing
+
 To contribute to this project, please fork the repository and submit a pull request with your changes. Make sure to include unit tests and integration tests for any new functionality. The project uses **Black** for code formatting, **Isort** for import sorting, and **Mypy** for type checking. Please ensure that your code conforms to these standards.
